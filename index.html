@@ -799,6 +799,8 @@
 
         // 創建棋盤
         function createBoard() {
+            //reset board in case of restart
+            gameBoard.innerHTML = '';
             // 創建100個格子
             for (let i = 1; i <= 100; i++) {
                 const cell = document.createElement('div');
@@ -1116,7 +1118,7 @@
                     movePlayer(gameState.pendingMove + 1);
                     break;
                 case 'minusOne':
-                    movePlayer(Math.max(1, gameState.pendingMove - 1));
+                    movePlayer(gameState.pendingMove - 1);
                     break;
                 case 'plusSeven':
                     movePlayer(7);
